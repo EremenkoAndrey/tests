@@ -2,13 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DumpItem from '../dump-item';
 
-function MonolithicList({ list, changeItem }) {
+function MonolithicList({ list, changeItem, addItems }) {
     return (
-        <ul>
-            {list.map((item, index) => (
-                <DumpItem key={item} item={item} index={index} changeItem={changeItem} />
-            ))}
-        </ul>
+        <div>
+            <ul>
+                {list.map((item, index) => (
+                    <DumpItem item={item} index={index} changeItem={changeItem} key={item}  />
+                ))}
+            </ul>
+            <button onClick={addItems}>Add items</button>
+        </div>
     )
 }
 
@@ -17,7 +20,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    changeItem: index => dispatch({ type: 'CHANGE_ITEM_1', index })
+    changeItem: index => dispatch({ type: 'CHANGE_ITEM_1', index }),
+    addItems: () => dispatch({ type: 'ADD_ITEMS_1' })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MonolithicList);

@@ -15,6 +15,8 @@ export default combineReducers({
                 const string = state[action.index].substr(0, 4);
                 newState[action.index] = `${string}${isNaN(count) ? 0 : count + 1}`;
                 return newState;
+            case 'ADD_ITEMS_1':
+                return state.concat(['z - 0']);
             default:
                 return state;
         }
@@ -27,6 +29,8 @@ export default combineReducers({
                 const string = state[action.index].substr(0, 4);
                 newState[action.index] = `${string}${isNaN(count) ? 0 : count + 1}`;
                 return newState;
+            case 'ADD_ITEMS_2':
+                return state.concat(['z - 0']);
             default:
                 return state;
         }
