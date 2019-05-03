@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import ContainerItem from '../container-item';
 
 function SeparatedList({ list, addItems }) {
+    console.log('SeparatedList render')
+
     return (
         <div>
             <ul>

@@ -5,7 +5,7 @@ function ContainerItem({ item, index, changeItem }) {
     console.log(`ContainerItem render ${index}`)
 
     return (
-        <li style={{ padding: '10px' }} key={item}>
+        <li style={{ padding: '10px' }}>
             {item}
             <br />
             <button onClick={() => changeItem(index)}>{'Increment'}</button>

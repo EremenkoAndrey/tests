@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import DumpItem from '../dump-item';
 
 function MonolithicList({ list, changeItem, addItems }) {
+    console.log('MonolithicList render')
+
     return (
         <div>
             <ul>
